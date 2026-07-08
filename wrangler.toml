@@ -1,0 +1,10 @@
+name = "siennas-cake-kitchen"
+compatibility_date = "2026-06-01"
+pages_build_output_dir = "."
+
+# Local dev only. Real values are set in the Cloudflare Pages dashboard
+# (Settings > Environment variables) for the production/preview deploys —
+# never commit real values here.
+[vars]
+APPS_SCRIPT_URL = ""
+APPS_SCRIPT_SHARED_SECRET = ""

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sienna's Cake Kitchen — Homemade cakes, made to order</title>
+<meta name="description" content="Homemade cakes baked to order. Browse our cakes, see prices, and request a booking — we'll call to confirm." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <span class="brand">Sienna's <em>Cake</em> Kitchen</span>
+    <a href="#book" class="btn btn-ghost">Book a cake</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-row">
+    <div class="hero-copy">
+      <p class="eyebrow">Baked in small batches, near you</p>
+      <h1>Cake that tastes like<br><span class="script">someone made it for you.</span></h1>
+      <p class="hero-sub">Every order is mixed, baked, and frosted by hand the week of your event. Pick a cake below, tell us the date, and we'll call to lock in the details.</p>
+      <a href="#cakes" class="btn btn-primary">See the cakes</a>
+    </div>
+  </div>
+  <div class="icing-divider" aria-hidden="true"></div>
+</section>
+
+<section id="cakes" class="cakes-section">
+  <div class="wrap">
+    <h2>This week's cakes</h2>
+    <p class="section-sub">Prices and availability are kept up to date by hand — what you see is what's bakeable this week.</p>
+    <div id="cake-grid" class="cake-grid" aria-live="polite">
+      <p class="loading">Loading the menu…</p>
+    </div>
+  </div>
+  <div class="icing-divider flip" aria-hidden="true"></div>
+</section>
+
+<section id="book" class="book-section">
+  <div class="wrap book-row">
+    <div class="book-intro">
+      <h2>Request a booking</h2>
+      <p>Fill this in and hit send. No payment yet — our baker calls you within a day to confirm flavor, size, and pickup or delivery, and to take payment then.</p>
+      <ol class="how-it-works">
+        <li>You send the request below</li>
+        <li>We call to confirm every detail</li>
+        <li>You pay over the phone or on pickup</li>
+        <li>Your cake gets baked for the date</li>
+      </ol>
+    </div>
+
+    <form id="booking-form" class="booking-form" novalidate>
+      <div class="field">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" required autocomplete="name" />
+      </div>
+      <div class="field">
+        <label for="phone">Phone number</label>
+        <input id="phone" name="phone" type="tel" required autocomplete="tel" />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required autocomplete="email" />
+      </div>
+      <div class="field">
+        <label for="cake">Which cake</label>
+        <select id="cake" name="cake" required>
+          <option value="" disabled selected>Loading cakes…</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="eventDate">Date you need it</label>
+        <input id="eventDate" name="eventDate" type="date" required />
+      </div>
+      <div class="field field-wide">
+        <label for="notes">Notes <span class="optional">(allergies, message, size)</span></label>
+        <textarea id="notes" name="notes" rows="3"></textarea>
+      </div>
+
+      <!-- honeypot, left empty by humans -->
+      <div class="field hp" aria-hidden="true">
+        <label for="company">Company</label>
+        <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-submit">Send booking request</button>
+      <p id="form-status" class="form-status" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Sienna's Cake Kitchen — made fresh, called personally, paid simply.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
